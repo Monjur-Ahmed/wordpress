@@ -1,3 +1,5 @@
+<?php
+
 add_action('check_admin_referer', 'logout_without_confirm', 10, 2);
    function logout_without_confirm($action, $result){
       if ($action == "log-out" && !isset($_GET['_wpnonce'])) {
@@ -13,3 +15,5 @@ function custom_woocommerce_login_redirect($redirect) {
     $redirect = home_url('/user-dashboard/');
     return $redirect;
 }
+
+?>
